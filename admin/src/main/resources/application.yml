@@ -1,0 +1,40 @@
+server:
+  port: ${INVEST_ADMIN_SERVICE_PORT:8050}
+
+spring:
+  application:
+    name: admin-service
+  profiles:
+    active:
+      - secure
+      - locale
+  boot:
+    admin:
+      ui:
+        title: "GF Invest Admin"
+        brand: "<img src=\"assets/img/icon-spring-boot-admin.svg\"><span>GFalcon-UA</span>"
+  thymeleaf:
+    check-template-location: false
+
+
+# tag::configuration-eureka[]
+eureka: #<1>
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      startup: ${random.int}    #needed to trigger info and endpoint update after restart
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: ${INVEST_EUREKA_SERVICE_HOST:http://localhost}:${INVEST_EUREKA_SERVICE_PORT:8761}/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  #<2>
+  endpoint:
+    health:
+      show-details: ALWAYS
+# end::configuration-eureka[]
