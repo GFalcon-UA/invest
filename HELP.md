@@ -13,6 +13,7 @@ For further reference, please consider the following sections:
 * [Spring Boot Actuator](https://docs.spring.io/spring-boot/docs/3.0.5/reference/htmlsingle/#actuator)
 * [Spring Shell](https://spring.io/projects/spring-shell)
 * [Spring Configuration Processor](https://docs.spring.io/spring-boot/docs/3.0.5/reference/htmlsingle/#appendix.configuration-metadata.annotation-processor)
+* [SpringDoc OpenAPI](https://springdoc.org/v2/)
 
 ### Guides
 

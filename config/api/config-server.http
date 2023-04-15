@@ -1,0 +1,13 @@
+POST {{host}}:{{port}}/encrypt
+Content-Type:text/plain
+
+mytest
+
+###
+
+POST {{host}}:{{port}}/decrypt
+Content-Type:text/plain
+
+AQAyRH+v65Ue+iyn8ZLfyF1PS7amgmd9wfetCKItaOMx94cucJt1qYPni3QvhREJ5vFbi+6dFEnyU87z/wQC5aiVvVCldDotOhyJ2gt75jgBrrcfhhC8ggIWIdVqsbEDSRC/61B0AuuCrcjhViQIZGWyn0ql6ojtP/scAMq2/2DS6vI2NPpz37O6B0BItZMb54JnZJF0Jo0sAP98dubJJOS9DicAJLtIcMYpRaPVOm1VUi0oR4QZlo3ha2F73wMAUCpFjMNfqC5edtPY073OScVk/vazeGrlfq2iEK3mCH26WAT22dXYqcX9zSggZ0mflMS2H5tFZcBPhU2+qslj8CLC4t4A3w4hhkR70Ox8DRoUGs7u29/WLIQJl9cMfP1oshk=
+
+###
