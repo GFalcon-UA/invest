@@ -14,18 +14,16 @@
  * limitations under the License.
  */
 
-package ua.com.gfalcon.invest.config;
+package ua.com.gfalcon.invest.eureka;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.config.server.EnableConfigServer;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
-@EnableConfigServer
-@SpringBootApplication
-public class ConfigService {
+@SpringBootTest
+class EurekaServiceTest {
 
-    public static void main(String[] args) {
-        SpringApplication.run(ConfigService.class, args);
+    @Test
+    void contextLoads() {
     }
 
 }
