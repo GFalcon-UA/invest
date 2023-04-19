@@ -105,3 +105,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+!/lib/**/*.*
+!/lib/clientportal.gw/build/

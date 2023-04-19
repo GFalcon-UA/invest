@@ -36,6 +36,9 @@
         <module>config</module>
         <module>eureka</module>
         <module>gateway</module>
+        <module>screener</module>
+        <module>ibkr-web-gw</module>
+        <module>ibkr-client</module>
     </modules>
     <properties>
         <revision>1.0.0-SNAPSHOT</revision>
@@ -101,6 +104,12 @@
                 <groupId>org.springdoc</groupId>
                 <artifactId>springdoc-openapi-starter-webflux-ui</artifactId>
                 <version>${springdoc-openapi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ua.com.gfalcon</groupId>
+                <artifactId>finviz-api</artifactId>
+                <version>0.1.0</version>
             </dependency>
 
         </dependencies>
@@ -176,6 +185,31 @@
                     <failsOnError>${maven-checkstyle-plugin.fails-on-error}</failsOnError>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-keys-storages</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/classes/keys</outputDirectory>
+                            <!--                            <outputDirectory>${project.build.sourceDirectory}/../resources/keys</outputDirectory>-->
+                            <resources>
+                                <resource>
+                                    <!--suppress UnresolvedMavenProperty -->
+                                    <directory>${project.parent.basedir}/keys
+                                    </directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
 
         <pluginManagement>
